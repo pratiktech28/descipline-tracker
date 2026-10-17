@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Daily Discipline"
+description = "A personal daily routine tracker for organizing habits and time blocks, checking off progress, and building consistent streaks with browser-based persistence."
+version = "1.0.0"
+id = "artifacts/daily-discipline"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18601
+
+[services.development]
+run = "pnpm --filter @workspace/daily-discipline run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/daily-discipline", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/daily-discipline/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18601"
+BASE_PATH = "/"

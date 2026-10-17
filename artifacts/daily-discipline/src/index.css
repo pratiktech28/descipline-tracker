@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 39 48% 95%; --foreground: 247 24% 19%; --border: 36 22% 85%;
+  --card: 42 50% 98%; --card-foreground: 247 24% 19%; --card-border: 36 22% 85%;
+  --sidebar: 39 48% 95%; --sidebar-foreground: 247 24% 19%; --sidebar-border: 36 22% 85%;
+  --sidebar-primary: 166 35% 31%; --sidebar-primary-foreground: 42 50% 98%; --sidebar-accent: 35 45% 89%; --sidebar-accent-foreground: 247 24% 19%; --sidebar-ring: 166 35% 31%;
+  --popover: 42 50% 98%; --popover-foreground: 247 24% 19%; --popover-border: 36 22% 85%;
+  --primary: 166 35% 31%; --primary-foreground: 42 50% 98%; --secondary: 35 45% 89%; --secondary-foreground: 247 24% 19%;
+  --muted: 37 30% 91%; --muted-foreground: 247 10% 48%; --accent: 17 75% 60%; --accent-foreground: 247 24% 19%;
+  --destructive: 2 63% 54%; --destructive-foreground: 42 50% 98%; --input: 36 22% 85%; --ring: 166 35% 31%;
+  --chart-1: 166 35% 31%; --chart-2: 17 75% 60%; --chart-3: 43 78% 61%; --chart-4: 247 24% 45%; --chart-5: 194 28% 56%;
+  --app-font-sans: 'DM Sans', sans-serif; --app-font-serif: 'Manrope', sans-serif; --app-font-mono: 'DM Mono', monospace;
+  --radius: 1rem;
+  --button-outline: rgba(36, 34, 51, .1); --badge-outline: rgba(36, 34, 51, .06);
+  --elevate-1: rgba(36, 34, 51, .035); --elevate-2: rgba(36, 34, 51, .08);
+  --tracking-normal: 0em; --spacing: .25rem;
+}
+.dark {
+  --background: 247 24% 13%; --foreground: 39 48% 95%; --border: 247 15% 27%;
+  --card: 247 21% 17%; --card-foreground: 39 48% 95%; --card-border: 247 15% 27%;
+  --sidebar: 247 24% 13%; --sidebar-foreground: 39 48% 95%; --sidebar-border: 247 15% 27%;
+  --sidebar-primary: 166 40% 55%; --sidebar-primary-foreground: 247 24% 13%; --sidebar-accent: 247 15% 24%; --sidebar-accent-foreground: 39 48% 95%; --sidebar-ring: 166 40% 55%;
+  --popover: 247 21% 17%; --popover-foreground: 39 48% 95%; --popover-border: 247 15% 27%;
+  --primary: 166 40% 55%; --primary-foreground: 247 24% 13%; --secondary: 247 15% 24%; --secondary-foreground: 39 48% 95%;
+  --muted: 247 15% 24%; --muted-foreground: 39 18% 68%; --accent: 17 75% 65%; --accent-foreground: 247 24% 13%;
+  --destructive: 2 63% 58%; --destructive-foreground: 39 48% 95%; --input: 247 15% 27%; --ring: 166 40% 55%;
+  --chart-1: 166 40% 55%; --chart-2: 17 75% 65%; --chart-3: 43 78% 61%; --chart-4: 247 24% 65%; --chart-5: 194 28% 56%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #f3eee3; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.app-shell { min-height: 100dvh; color: #29283a; background: #f3eee3; font-family: var(--app-font-sans); }
+.dashboard { max-width: 1440px; margin: auto; padding: 30px 5.2vw 64px; }
+.topbar { display:flex; align-items:center; justify-content:space-between; padding: 4px 0 34px; }
+.brand { display:flex; align-items:center; gap:12px; font:800 17px var(--app-font-serif); letter-spacing:-.7px; }
+.brand-mark { display:grid; place-items:center; width:37px; height:37px; border-radius:13px; background:#286d5c; color:#f7f0df; }
+.brand-mark svg { width:19px; }
+.top-meta { display:flex; gap:10px; align-items:center; color:#777484; font:500 12px var(--app-font-mono); letter-spacing:.06em; }
+.live-dot { width:7px;height:7px;border-radius:99px;background:#d77955; box-shadow:0 0 0 4px #d779551d; }
+.hero { display:grid; grid-template-columns: minmax(0,1fr) 280px; gap:32px; align-items:end; margin: 6px 0 32px; }
+.eyebrow { color:#a16c4c; font:500 11px var(--app-font-mono); letter-spacing:.14em; text-transform:uppercase; }
+.hero h1 { margin:10px 0 8px; font:700 clamp(39px,5vw,68px)/1.03 var(--app-font-serif); letter-spacing:-.065em; color:#2a293a; }
+.hero h1 em { color:#286d5c; font-style:normal; }
+.hero-copy { margin:0; color:#777484; font-size:14px; }
+.date-control { display:flex; align-items:center; gap:8px; justify-content:flex-end; }
+.icon-button,.date-button { border:1px solid #ded8ca; background:#f9f6ee; color:#555365; border-radius:12px; height:42px; transition:.2s ease; }
+.icon-button { width:42px; display:grid; place-items:center; }
+.date-button { padding:0 13px; font:500 12px var(--app-font-mono); display:flex; align-items:center; gap:8px;position:relative; }
+.date-button input[type="date"] { position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer; }
+.icon-button:hover,.date-button:hover { border-color:#286d5c; color:#286d5c; transform:translateY(-2px); }
+.layout { display:grid; grid-template-columns:minmax(0,1fr) 310px; align-items:start; gap:22px; }
+.main-column { min-width:0; }
+.summary-grid { display:grid; grid-template-columns:1.55fr 1fr 1fr; gap:12px; margin-bottom:18px; }
+.summary-card { border:1px solid #e1dbcf; background:#f9f6ee; border-radius:18px; padding:18px 20px; min-height:106px; }
+.progress-card { background:#286d5c; color:#f6f1e5; border-color:#286d5c; position:relative; overflow:hidden; }
+.progress-card:after { content:""; position:absolute; width:135px;height:135px;border:1px solid #ffffff24;border-radius:50%;right:-22px;top:-70px;box-shadow:0 0 0 15px #ffffff0a,0 0 0 31px #ffffff08; }
+.summary-label { font:500 10px var(--app-font-mono); letter-spacing:.12em; text-transform:uppercase; opacity:.7; }
+.progress-line { display:flex; align-items:baseline; gap:7px; margin-top:10px; position:relative; z-index:1; }
+.progress-value { font:700 34px/.9 var(--app-font-serif); letter-spacing:-.06em; }
+.progress-detail { font-size:12px; opacity:.72; }
+.progress-track { height:4px; background:#ffffff30; border-radius:10px; margin-top:13px; overflow:hidden; position:relative;z-index:1; }
+.progress-fill { height:100%; border-radius:10px; background:#efbd72; transition:width .55s cubic-bezier(.2,.8,.2,1); }
+.stat-number { font:700 28px/1 var(--app-font-serif); margin-top:12px; letter-spacing:-.05em; }
+.stat-caption { color:#878493; font-size:11px; margin-top:5px; }
+.routine-card { background:#faf8f1; border:1px solid #e1dbcf; border-radius:20px; overflow:hidden; }
+.routine-head { display:flex; justify-content:space-between; align-items:center; padding:20px 22px; border-bottom:1px solid #e9e3d8; }
+.section-title { font:700 17px var(--app-font-serif); letter-spacing:-.03em; }
+.section-sub { color:#898694; font-size:11px; margin-top:3px; }
+.add-button { display:flex; align-items:center; gap:7px; border:0; border-radius:11px; padding:10px 13px; background:#e9eee4; color:#286d5c; font-size:12px; font-weight:700; transition:.2s; }
+.add-button:hover { background:#dbe7dc; transform:translateY(-2px); }
+.routine-list { padding:4px 14px 12px; }
+.routine-row { display:grid; grid-template-columns:68px 20px minmax(0,1fr) auto; gap:13px; align-items:center; min-height:72px; padding:10px 8px; border-bottom:1px solid #eee9df; position:relative; animation:rowIn .45s both; }
+.routine-row:last-child { border-bottom:0; }
+.routine-row.done .activity-title { color:#9b9aa2; text-decoration:line-through; text-decoration-color:#b6c6b6; }
+.time-text { color:#777484; font:500 11px var(--app-font-mono); }
+.check-button { border:1.5px solid #c8c8bf; color:#fff; background:transparent; width:19px;height:19px;border-radius:7px;display:grid;place-items:center;padding:0;transition:.2s; }
+.check-button:hover { border-color:#286d5c; transform:scale(1.1); }
+.check-button.checked { background:#286d5c;border-color:#286d5c; animation:checkPop .28s ease; }
+.activity-title { font-size:13px; font-weight:700; color:#343344; transition:color .2s; }
+.activity-note { color:#9693a0; font-size:11px; margin-top:3px; }
+.activity-tools { display:flex; gap:3px; opacity:0; transition:opacity .2s; }
+.routine-row:hover .activity-tools,.activity-tools:focus-within { opacity:1; }
+.tool-button { background:transparent;border:0;color:#878493;width:31px;height:31px;border-radius:9px;display:grid;place-items:center; }
+.tool-button:hover { background:#eee9df;color:#286d5c; }
+.tool-button.delete:hover { color:#c64e43;background:#f5e3dc; }
+.sidebar { display:grid; gap:16px; }
+.side-card { border:1px solid #e1dbcf;background:#f9f6ee;border-radius:18px;padding:20px; }
+.week-title-row { display:flex;align-items:center;justify-content:space-between; }
+.week-title { font:700 16px var(--app-font-serif);letter-spacing:-.03em; }
+.week-caption { font-size:11px;color:#898694;margin-top:4px; }
+.week-dots { display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:19px; }
+.day-col { display:flex;flex-direction:column;align-items:center;gap:8px; }
+.day-label { color:#9895a0;font:500 9px var(--app-font-mono);text-transform:uppercase; }
+.day-dot { width:27px;height:27px;border-radius:9px;background:#ede9df;display:grid;place-items:center;color:#9895a0;font-size:10px;transition:.2s; }
+.day-dot.active { background:#286d5c;color:#f7f2e6;box-shadow:0 4px 10px #286d5c33; }
+.day-dot.partial { background:#e9bd77;color:#534735; }
+.week-foot { border-top:1px solid #eae5db;margin-top:17px;padding-top:14px;display:flex;align-items:center;justify-content:space-between;color:#858290;font-size:11px; }
+.week-foot strong { color:#286d5c;font:600 11px var(--app-font-mono); }
+.quote-card { color:#f4eddf; background:#302f43; border-radius:18px;padding:22px; min-height:165px;position:relative;overflow:hidden; }
+.quote-card:after { content:"";position:absolute;width:100px;height:100px;border:1px solid #e9bd773b;border-radius:50%;right:-24px;bottom:-42px;box-shadow:0 0 0 12px #e9bd7710,0 0 0 25px #e9bd7708; }
+.quote-mark { font:700 28px var(--app-font-serif);color:#e9bd77;line-height:.8; }
+.quote-text { font:500 16px/1.45 var(--app-font-serif);letter-spacing:-.02em;margin:12px 0 13px;max-width:230px; }
+.quote-by { color:#aaa7b5;font:500 9px var(--app-font-mono);letter-spacing:.13em;text-transform:uppercase; }
+.next-card { padding:19px 20px; }
+.next-kicker { color:#a16c4c;font:500 9px var(--app-font-mono);text-transform:uppercase;letter-spacing:.13em; }
+.next-name { font:700 15px var(--app-font-serif);margin-top:9px; }
+.next-time { color:#898694;font:500 11px var(--app-font-mono);margin-top:5px; }
+.empty-state { padding:45px 15px;text-align:center;color:#898694;font-size:13px; }
+.empty-state strong { display:block;color:#343344;font:700 16px var(--app-font-serif);margin-bottom:5px; }
+.modal-backdrop { position:fixed;inset:0;background:#29283a66;backdrop-filter:blur(5px);display:grid;place-items:center;padding:18px;z-index:20;animation:fadeIn .18s ease; }
+.activity-modal { width:min(430px,100%);background:#faf8f1;border:1px solid #e1dbcf;border-radius:22px;padding:25px;box-shadow:0 24px 70px #26253a30;animation:modalIn .25s cubic-bezier(.2,.8,.2,1); }
+.modal-top { display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:21px; }
+.modal-title { font:700 23px var(--app-font-serif);letter-spacing:-.04em; }
+.modal-copy { color:#858290;font-size:12px;margin-top:4px; }
+.close-button { border:0;background:#eee9df;color:#696776;border-radius:9px;width:33px;height:33px;display:grid;place-items:center; }
+.form-field { display:grid;gap:7px;margin-bottom:15px; }
+.form-field label { color:#777484;font:500 10px var(--app-font-mono);text-transform:uppercase;letter-spacing:.1em; }
+.form-field input { width:100%;height:43px;border:1px solid #ded8ca;background:#f7f3e9;color:#343344;padding:0 12px;border-radius:11px;outline:none; }
+.form-field input:focus { border-color:#286d5c;box-shadow:0 0 0 3px #286d5c1b; }
+.form-row { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+.modal-actions { display:flex;justify-content:flex-end;gap:9px;margin-top:22px; }
+.cancel-button,.save-button { height:41px;border-radius:11px;padding:0 16px;font-size:12px;font-weight:700; }
+.cancel-button { border:1px solid #ded8ca;background:transparent;color:#686675; }
+.save-button { border:0;background:#286d5c;color:#f8f3e8;min-width:104px;transition:.2s; }
+.save-button:hover { background:#205a4d;transform:translateY(-1px); }
+.mobile-date { display:none; }
+@keyframes rowIn { from {opacity:0;transform:translateY(8px)} to {opacity:1;transform:translateY(0)} }
+@keyframes checkPop { 50% {transform:scale(1.2)} }
+@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+@keyframes modalIn { from {opacity:0;transform:translateY(9px) scale(.98)} to {opacity:1;transform:translateY(0) scale(1)} }
+@media (max-width:900px) {
+ .dashboard { padding:24px 25px 48px; }
+ .layout { grid-template-columns:minmax(0,1fr) 265px;gap:14px; }
+ .summary-grid { grid-template-columns:1.3fr 1fr 1fr;gap:8px; }
+ .summary-card { padding:15px; }
+}
+@media (max-width:700px) {
+ .dashboard { padding:18px 16px 38px; }
+ .topbar { padding-bottom:28px; }
+ .top-meta { font-size:10px; }
+ .hero { display:block;margin-bottom:23px; }
+ .hero h1 { font-size:48px; }
+ .hero-copy { max-width:310px;line-height:1.5; }
+ .date-control { justify-content:flex-start;margin-top:17px; }
+ .layout { grid-template-columns:1fr;gap:15px; }
+ .summary-grid { grid-template-columns:1fr 1fr; }
+ .progress-card { grid-column:1 / -1;min-height:118px; }
+ .sidebar { grid-template-columns:1fr 1fr; }
+ .quote-card { min-height:100%; }
+ .next-card { grid-column:1 / -1; }
+ .routine-head { padding:17px; }
+ .routine-list { padding:4px 10px 10px; }
+ .routine-row { grid-template-columns:57px 19px minmax(0,1fr) auto;gap:9px;min-height:68px;padding:9px 4px; }
+ .activity-tools { opacity:1; }
+ .tool-button { width:28px; }
+}
+@media (max-width:420px) {
+ .sidebar { grid-template-columns:1fr; }
+ .quote-card { min-height:154px; }
+ .routine-row { grid-template-columns:50px 18px minmax(0,1fr) auto;gap:7px; }
+ .time-text { font-size:10px; }
+ .activity-title { font-size:12px; }
+ .activity-note { font-size:10px; }
+ .activity-tools { gap:0; }
+ .tool-button { width:25px; }
+}
+@media (prefers-reduced-motion:reduce) {
+ *,*::before,*::after { animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important; }
+}
+
+/**
+ * Using the elevate system.
+ * Automatic contrast adjustment.
+ *
+ * <element className="hover-elevate" />
+ * <element className="active-elevate-2" />
+ *
+ * // Using the tailwind utility when a data attribute is "on"
+ * <element className="toggle-elevate data-[state=on]:toggle-elevated" />
+ * // Or manually controlling the toggle state
+ * <element className="toggle-elevate toggle-elevated" />
+ *
+ * Elevation systems have to handle many states.
+ * - not-hovered, vs. hovered vs. active  (three mutually exclusive states)
+ * - toggled or not
+ * - focused or not (this is not handled with these utilities)
+ *
+ * Even without handling focused or not, this is six possible combinations that
+ * need to be distinguished from eachother visually.
+ */
+@layer utilities {
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type='search']::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
+   * buttons/badges can remove the automatic brightness adjustment on interactions
+   * and program their own. */
+  .no-default-hover-elevate {
+  }
+
+  .no-default-active-elevate {
+  }
+
+  /**
+   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
+   * This way they can stack/compound. Both will overlap the parent's borders!
+   * So borders will be automatically adjusted both on toggle, and hover/active,
+   * and they will be compounded.
+   */
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: -1;
+    /* sits behind content but above backdrop */
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  /* Does not work on elements with overflow:hidden! */
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: 999;
+    /* sits in front of content */
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
