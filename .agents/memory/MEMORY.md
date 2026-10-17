@@ -1,0 +1,1 @@
+- [Manual Vite builds](manual-vite-builds.md) — direct shell builds need the artifact's service environment values even when its preview workflow works.

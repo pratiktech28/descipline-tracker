@@ -1,0 +1,196 @@
+.momentum {
+  --m-ink: #24263d;
+  --m-sub: #77758a;
+  --m-paper: #f7f4eb;
+  --m-card: #fffdf7;
+  --m-line: #e8e2d5;
+  --m-coral: #f16f51;
+  --m-orange: #f5a34d;
+  --m-lime: #d7ed78;
+  --m-green: #347a68;
+  --m-mono: "DM Mono", monospace;
+  --m-display: "Manrope", sans-serif;
+  --m-body: "DM Sans", sans-serif;
+  min-height: 100dvh;
+  background:
+    radial-gradient(ellipse at 83% 4%, rgba(215, 237, 120, .36), transparent 27rem),
+    var(--m-paper);
+  color: var(--m-ink);
+  font-family: var(--m-body);
+  padding: 0 0 60px;
+}
+
+.momentum * { box-sizing: border-box; }
+.momentum button, .momentum input, .momentum textarea { font: inherit; }
+.momentum button { cursor: pointer; }
+.momentum button:focus-visible, .momentum input:focus-visible, .momentum textarea:focus-visible {
+  outline: 3px solid rgba(241, 111, 81, .4);
+  outline-offset: 3px;
+}
+
+.momentum-wrap { width: min(1320px, calc(100% - 64px)); margin: 0 auto; }
+.momentum-topbar { display:flex; align-items:center; justify-content:space-between; padding:26px 0 34px; }
+.momentum-brand { display:flex; align-items:center; gap:11px; font:800 15px var(--m-display); letter-spacing:-.04em; }
+.momentum-brand-mark { width:35px; height:35px; display:grid; place-items:center; color:#fffaf0; background:var(--m-ink); border-radius:12px; transform:rotate(-7deg); }
+.momentum-brand-mark svg { width:18px; }
+.momentum-status { display:flex; align-items:center; gap:9px; color:#797689; font:500 10px var(--m-mono); letter-spacing:.1em; text-transform:uppercase; }
+.momentum-live { width:7px; height:7px; border-radius:50%; background:var(--m-green); box-shadow:0 0 0 4px rgba(52,122,104,.12); }
+
+.momentum-hero { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin:0 0 30px; }
+.momentum-kicker,.momentum-micro { color:#a75b42; font:500 10px var(--m-mono); letter-spacing:.14em; text-transform:uppercase; }
+.momentum-hero h1 { margin:10px 0 9px; font:700 clamp(42px,6.1vw,76px)/.98 var(--m-display); letter-spacing:-.075em; }
+.momentum-hero h1 em { color:var(--m-coral); font-style:normal; }
+.momentum-hero-copy { color:var(--m-sub); margin:0; font-size:14px; }
+.momentum-date { display:flex; align-items:center; gap:8px; padding-bottom:3px; }
+.momentum-date button { border:1px solid var(--m-line); width:38px; height:38px; display:grid; place-items:center; color:var(--m-ink); border-radius:12px; background:rgba(255,253,247,.78); transition:transform .2s, border-color .2s, color .2s; }
+.momentum-date button:hover { transform:translateY(-2px); border-color:var(--m-coral); color:var(--m-coral); }
+.momentum-date-control { position:relative; display:flex; align-items:center; gap:8px; min-height:40px; padding:0 12px; border:1px solid var(--m-line); border-radius:12px; background:var(--m-card); color:#625f72; font:500 10px var(--m-mono); letter-spacing:.04em; }
+.momentum-date-control input { position:absolute; inset:0; opacity:0; width:100%; cursor:pointer; }
+
+.momentum-grid { display:grid; grid-template-columns:minmax(0,1fr) 315px; gap:18px; align-items:start; }
+.momentum-main { min-width:0; }
+.momentum-summary { display:grid; grid-template-columns:1.45fr 1fr 1fr; gap:11px; margin-bottom:16px; }
+.momentum-stat { min-height:104px; border:1px solid var(--m-line); background:var(--m-card); border-radius:18px; padding:17px 19px; }
+.momentum-stat-progress { background:var(--m-ink); color:#fff9ed; border-color:var(--m-ink); position:relative; overflow:hidden; }
+.momentum-stat-progress:after { content:""; position:absolute; width:150px; height:150px; right:-44px; top:-89px; border:1px solid #ffffff2a; border-radius:50%; box-shadow:0 0 0 14px #ffffff09,0 0 0 30px #ffffff08; pointer-events:none; }
+.momentum-stat-label { opacity:.67; font:500 9px var(--m-mono); letter-spacing:.12em; text-transform:uppercase; }
+.momentum-progress-line { display:flex; align-items:baseline; gap:8px; margin:11px 0 12px; position:relative; z-index:1; }
+.momentum-progress-number { font:800 32px/.9 var(--m-display); letter-spacing:-.07em; }
+.momentum-progress-detail { opacity:.7; font-size:11px; }
+.momentum-progress-track { height:5px; border-radius:9px; background:#ffffff2c; overflow:hidden; position:relative; z-index:1; }
+.momentum-progress-fill { height:100%; border-radius:inherit; background:var(--m-lime); transition:width .5s cubic-bezier(.2,.8,.2,1); }
+.momentum-stat-value { margin-top:11px; font:800 28px/.95 var(--m-display); letter-spacing:-.07em; }
+.momentum-stat-value span { color:#a6a3af; font-size:13px; letter-spacing:-.02em; }
+.momentum-stat-caption { margin-top:7px; color:#898697; font-size:10px; }
+
+.momentum-routine { border:1px solid var(--m-line); background:var(--m-card); border-radius:20px; overflow:hidden; }
+.momentum-routine-head { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:19px 21px; border-bottom:1px solid #eee9df; }
+.momentum-section-title { font:800 16px var(--m-display); letter-spacing:-.045em; }
+.momentum-section-sub { margin-top:4px; color:#8d899a; font-size:10px; }
+.momentum-add { display:inline-flex; align-items:center; gap:7px; padding:10px 13px; border:0; border-radius:11px; background:#fce4d9; color:#a84e38; font-size:11px; font-weight:700; transition:transform .2s, background .2s; white-space:nowrap; }
+.momentum-add:hover { transform:translateY(-2px); background:#f8d5c4; }
+.momentum-rows { padding:3px 14px 11px; }
+.momentum-row { display:grid; grid-template-columns:65px 21px minmax(0,1fr) auto; align-items:center; gap:12px; min-height:69px; padding:9px 8px; border-bottom:1px solid #f0ece4; }
+.momentum-row:last-child { border-bottom:0; }
+.momentum-row.done .momentum-activity-title { color:#a5a2ad; text-decoration:line-through; text-decoration-color:#c6d99a; }
+.momentum-time { color:#8b8798; font:500 10px var(--m-mono); }
+.momentum-check { width:20px; height:20px; display:grid; place-items:center; padding:0; border:1.5px solid #d6d1c5; background:transparent; color:white; border-radius:7px; transition:background .2s, border-color .2s, transform .2s; }
+.momentum-check:hover { border-color:var(--m-green); transform:scale(1.1); }
+.momentum-check.checked { background:var(--m-green); border-color:var(--m-green); }
+.momentum-check svg { display:block; }
+.momentum-activity-title { color:#303148; font-size:12px; font-weight:700; transition:color .25s; }
+.momentum-activity-note { margin-top:3px; color:#9995a3; font-size:10px; }
+.momentum-tools { display:flex; gap:2px; opacity:0; transition:opacity .2s; }
+.momentum-row:hover .momentum-tools,.momentum-tools:focus-within { opacity:1; }
+.momentum-tool { width:30px; height:30px; display:grid; place-items:center; border:0; border-radius:9px; background:transparent; color:#898697; }
+.momentum-tool:hover { background:#f1ede5; color:var(--m-green); }
+.momentum-tool.delete:hover { color:#bd5145; background:#fbe7df; }
+.momentum-empty { padding:38px 18px; text-align:center; color:#898697; font-size:12px; }
+.momentum-empty strong { display:block; margin-bottom:6px; color:var(--m-ink); font:800 16px var(--m-display); }
+
+.momentum-sidebar { display:grid; gap:14px; }
+.momentum-side-card { border:1px solid var(--m-line); background:var(--m-card); border-radius:18px; padding:19px; }
+.momentum-week-head { display:flex; align-items:center; justify-content:space-between; }
+.momentum-week-title { font:800 15px var(--m-display); letter-spacing:-.04em; }
+.momentum-week-caption { margin-top:4px; color:#918d9a; font-size:10px; }
+.momentum-week-dots { display:grid; grid-template-columns:repeat(7,1fr); gap:7px; margin-top:18px; }
+.momentum-day-col { display:flex; align-items:center; flex-direction:column; gap:7px; }
+.momentum-day-label { color:#9e9aa6; font:500 9px var(--m-mono); text-transform:uppercase; }
+.momentum-day-dot { width:27px; height:27px; display:grid; place-items:center; color:#aaa6b0; background:#f0ede5; border-radius:9px; font-size:10px; }
+.momentum-day-dot.active { color:#fff9ed; background:var(--m-green); }
+.momentum-day-dot.partial { color:#6b4a35; background:#f6c47b; }
+.momentum-week-foot { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #eee9df; margin-top:15px; padding-top:13px; color:#8a8794; font-size:10px; }
+.momentum-week-foot strong { color:var(--m-green); font:500 10px var(--m-mono); }
+.momentum-note-card { position:relative; min-height:143px; overflow:hidden; border:0; border-radius:18px; padding:20px; color:#2b2c3e; background:var(--m-lime); }
+.momentum-note-card:after { content:""; position:absolute; width:105px;height:105px;right:-35px;bottom:-55px;border:1px solid #24263d2c;border-radius:50%;box-shadow:0 0 0 12px #24263d0b,0 0 0 24px #24263d08; }
+.momentum-note-card .momentum-micro { color:#657137; }
+.momentum-note-card p { position:relative; z-index:1; margin:15px 0 13px; max-width:230px; font:700 15px/1.4 var(--m-display); letter-spacing:-.035em; }
+.momentum-note-by { color:#656c43; font:500 9px var(--m-mono); letter-spacing:.12em; text-transform:uppercase; }
+.momentum-next { padding:18px 19px; }
+.momentum-next .momentum-micro { color:#b26043; font-size:9px; }
+.momentum-next-name { margin-top:8px; font:800 15px var(--m-display); letter-spacing:-.04em; }
+.momentum-next-time { margin-top:5px; color:#8d899a; font:500 10px var(--m-mono); }
+
+.momentum-focus { padding:20px; color:#fff8ed; border-radius:20px; background:linear-gradient(135deg,#ef7654 0%,#dc5f4a 100%); position:relative; overflow:hidden; }
+.momentum-focus:before { content:""; position:absolute; width:190px; height:190px; right:-80px; top:-112px; border:1px solid #ffffff35; border-radius:50%; box-shadow:0 0 0 16px #ffffff0c,0 0 0 34px #ffffff09; pointer-events:none; }
+.momentum-focus-head { display:flex; justify-content:space-between; align-items:center; position:relative; z-index:1; }
+.momentum-focus-head .momentum-micro { color:#ffe0c8; }
+.momentum-focus-label { margin-top:5px; font:700 13px var(--m-display); letter-spacing:-.03em; }
+.momentum-focus-select { max-width:126px; border:1px solid #ffffff5c; color:#fff9ed; background:#ffffff1c; border-radius:9px; padding:7px 23px 7px 9px; font-size:10px; }
+.momentum-focus-select option { color:#25263b; }
+.momentum-timer { display:flex; align-items:baseline; gap:7px; margin:21px 0 17px; font:500 clamp(35px,5vw,48px)/1 var(--m-mono); letter-spacing:-.08em; position:relative; z-index:1; }
+.momentum-timer small { color:#ffe1cf; font:500 9px var(--m-mono); letter-spacing:.11em; }
+.momentum-timer-track { height:4px; overflow:hidden; border-radius:8px; background:#ffffff4d; }
+.momentum-timer-fill { height:100%; background:#fff5d7; border-radius:inherit; transform-origin:left; }
+.momentum-timer-actions { display:flex; gap:8px; margin-top:17px; position:relative; z-index:1; }
+.momentum-timer-actions button { display:inline-flex; align-items:center; justify-content:center; gap:7px; height:35px; border-radius:10px; padding:0 12px; font-size:10px; font-weight:700; transition:transform .2s,background .2s; }
+.momentum-timer-actions button:hover { transform:translateY(-2px); }
+.momentum-timer-primary { border:0; color:#8f4834; background:#fff4df; }
+.momentum-timer-secondary { border:1px solid #ffffff69; color:#fff8ed; background:#ffffff12; }
+.momentum-timer-status { margin-top:10px; min-height:13px; color:#ffe0ce; font-size:9px; }
+
+.momentum-reflection { padding:19px; }
+.momentum-reflection-head { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.momentum-reflection-title { font:800 14px var(--m-display); letter-spacing:-.04em; }
+.momentum-save-state { display:flex; align-items:center; gap:5px; color:#8a8793; font:500 9px var(--m-mono); }
+.momentum-save-state svg { color:var(--m-green); }
+.momentum-reflection-prompt { margin:8px 0 11px; color:#898697; font-size:10px; }
+.momentum-reflection textarea { resize:vertical; width:100%; min-height:91px; padding:11px 12px; color:var(--m-ink); border:1px solid var(--m-line); border-radius:12px; background:#fbf9f2; font-size:11px; line-height:1.55; outline:none; }
+.momentum-reflection textarea:focus { border-color:#83a47d; box-shadow:0 0 0 3px #347a6818; }
+
+.momentum-modal-backdrop { position:fixed; inset:0; z-index:20; display:grid; place-items:center; padding:18px; background:#24263d75; backdrop-filter:blur(5px); }
+.momentum-modal { width:min(440px,100%); padding:24px; border:1px solid var(--m-line); border-radius:22px; background:var(--m-card); box-shadow:0 24px 70px #24263d30; }
+.momentum-modal-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; }
+.momentum-modal-title { font:800 22px var(--m-display); letter-spacing:-.06em; }
+.momentum-modal-copy { margin-top:4px; color:#898697; font-size:11px; }
+.momentum-close { width:33px;height:33px;display:grid;place-items:center;border:0;border-radius:9px;background:#f1ede5;color:#777486; }
+.momentum-field { display:grid; gap:7px; margin-bottom:14px; }
+.momentum-field label { color:#858191; font:500 9px var(--m-mono); letter-spacing:.1em; text-transform:uppercase; }
+.momentum-field input { width:100%; height:42px; padding:0 12px; border:1px solid var(--m-line); border-radius:11px; background:#fbf9f2; color:var(--m-ink); outline:none; }
+.momentum-field input:focus { border-color:var(--m-green); }
+.momentum-form-row { display:grid; grid-template-columns:.7fr 1.3fr; gap:12px; }
+.momentum-modal-actions { display:flex; justify-content:flex-end; gap:9px; margin-top:21px; }
+.momentum-modal-actions button { height:40px; padding:0 15px; border-radius:11px; font-size:11px; font-weight:700; }
+.momentum-cancel { border:1px solid var(--m-line); background:transparent; color:#777486; }
+.momentum-save { min-width:110px; border:0; background:var(--m-green); color:#fff9ed; }
+
+@media (max-width:980px) {
+  .momentum-wrap { width:min(100% - 42px,760px); }
+  .momentum-grid { grid-template-columns:minmax(0,1fr) 270px; gap:13px; }
+  .momentum-summary { gap:8px; }
+  .momentum-stat { padding:15px; }
+}
+@media (max-width:760px) {
+  .momentum-wrap { width:calc(100% - 32px); }
+  .momentum-topbar { padding:18px 0 27px; }
+  .momentum-hero { display:block; margin-bottom:23px; }
+  .momentum-hero h1 { font-size:clamp(43px,12vw,64px); }
+  .momentum-hero-copy { max-width:330px; line-height:1.5; }
+  .momentum-date { justify-content:flex-start; margin-top:17px; }
+  .momentum-grid { grid-template-columns:1fr; }
+  .momentum-sidebar { grid-template-columns:1fr 1fr; }
+  .momentum-next { grid-column:1 / -1; }
+  .momentum-focus { grid-column:1 / -1; }
+  .momentum-reflection { grid-column:1 / -1; }
+  .momentum-tools { opacity:1; }
+}
+@media (max-width:520px) {
+  .momentum-topbar { padding-bottom:22px; }
+  .momentum-status { font-size:8px; letter-spacing:.06em; }
+  .momentum-brand { font-size:13px; }
+  .momentum-summary { grid-template-columns:1fr 1fr; }
+  .momentum-stat-progress { grid-column:1 / -1; }
+  .momentum-sidebar { grid-template-columns:1fr; }
+  .momentum-next,.momentum-focus,.momentum-reflection { grid-column:auto; }
+  .momentum-routine-head { padding:16px; }
+  .momentum-rows { padding:3px 9px 9px; }
+  .momentum-row { grid-template-columns:49px 19px minmax(0,1fr) auto; gap:8px; min-height:65px; padding:8px 3px; }
+  .momentum-time { font-size:9px; }
+  .momentum-activity-title { font-size:11px; }
+  .momentum-activity-note { font-size:9px; }
+  .momentum-tool { width:25px; }
+  .momentum-add { padding:9px 10px; font-size:10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .momentum *, .momentum *::before, .momentum *::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
+}
