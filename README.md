@@ -140,26 +140,3 @@
 
 <hr />
 
-<h1>🛠️ Local Setup Instructions</h1>
-
-<h3>1. Clone Repository</h3>
-<pre><code>git clone https://github.com/pratiktechh/daily-discipline.git
-cd daily-discipline</code></pre>
-
-<h3>2. Install Dependencies</h3>
-<pre><code>pnpm install
-# or
-npm install</code></pre>
-
-<h3>3. Start Development Server</h3>
-<pre><code>pnpm dev
-# or
-npm run dev</code></pre>
-
-<p>Open <code>http://localhost:5173</code> in your web browser.</p>
-
-<hr />
-
-<div align="center">
-  <sub>Built with discipline by <a href="https://github.com/pratiktechh">Pratik</a></sub>
-</div>
