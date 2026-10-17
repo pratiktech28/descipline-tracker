@@ -1,4 +1,4 @@
-# descipline-tracker
+⚡ Daily Discipline Application: Complete Architecture & Features Summary
 <div align="center">
 
   <h1>⚡ Daily Discipline</h1>
@@ -18,6 +18,34 @@
 
 ---
 
-## 📌 Overview
+📌 Project Overview
+Daily Discipline ek modern, minimalist aur human-centric habit tracking application hai. Iska core philosophy "A little structure. A lot of room to grow" par based hai, jo rigid task lists ki jagah ek natural daily flow aur consistency build karne me help karta hai.
 
-**Daily Discipline** is designed around a human-centric approach to routine
+🎨 UI & Design Architecture
+1. Glassmorphism Aesthetics
+Soft cream background (#FAF8F5) ke saath dark glassmorphic components.
+
+Rounded corners, smooth subtle borders, aur clean typography.
+
+2. High-Impact Hero Banner
+Dynamic heading: "Make room for your rhythm."
+
+Sub-headline: "Keep showing up. Leave space for being human."
+
+Real-time date navigator aur status pill ("Your space, your pace").
+
+🛠️ Key Technical Features & Functional Components
+1. Progress & Streak Analytics
+Your Day in Motion Card: Real-time percentage calculate karta hai (e.g., 56% - 5 of 8 moments complete).
+
+Little Wins Counter: Completed daily micro-tasks ko track karta hai.
+
+Steady Days (Streak Tracker): Daily completion streak aur flame icon update karta hai.
+
+2. Daily Schedule Matrix
+3. Integrated Focus & Reflection Widgets
+Focus Session Timer: 50-minute default focus sprint timer with start/reset controls.
+
+Weekly Rhythm Grid: Mon-Sun weekly tracker showing daily active status.
+
+A Note to Yourself: Embedded digital notepad with local storage auto-save ("What felt good today? What can wait?").
